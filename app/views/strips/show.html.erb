@@ -1,18 +1,16 @@
-<p>
-  <b>Title:</b>
-  <%= @strip.title %>
-</p>
+<h2><%= @strip.title %></h2>
+
+<center>
+<img src="http://dl.dropbox.com/u/3819516/mykomiks/<%= @strip.url %>.jpg" alt="<%= @strip.title %>" />
+</center>
+
+<hr />
 
 <p>
-  <b>Url:</b>
-  <%= @strip.url %>
-</p>
-
-<p>
-  <b>Story:</b>
   <%= @strip.story %>
 </p>
 
-
+<!--
 <%= link_to 'Edit', edit_strip_path(@strip) %> |
 <%= link_to 'Back', strips_path %>
+-->

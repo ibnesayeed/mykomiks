@@ -1,10 +1,9 @@
 <h1>Listing strips</h1>
 
-<table>
+<table border="1">
   <tr>
     <th>Title</th>
     <th>Url</th>
-    <th>Story</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,7 +13,6 @@
   <tr>
     <td><%= strip.title %></td>
     <td><%= strip.url %></td>
-    <td><%= strip.story %></td>
     <td><%= link_to 'Show', strip %></td>
     <td><%= link_to 'Edit', edit_strip_path(strip) %></td>
     <td><%= link_to 'Destroy', strip, :confirm => 'Are you sure?', :method => :delete %></td>
