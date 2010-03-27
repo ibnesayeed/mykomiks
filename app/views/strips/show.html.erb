@@ -1,0 +1,18 @@
+<p>
+  <b>Title:</b>
+  <%= @strip.title %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @strip.url %>
+</p>
+
+<p>
+  <b>Story:</b>
+  <%= @strip.story %>
+</p>
+
+
+<%= link_to 'Edit', edit_strip_path(@strip) %> |
+<%= link_to 'Back', strips_path %>
