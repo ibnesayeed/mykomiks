@@ -5,14 +5,80 @@
   <%= stylesheet_link_tag 'scaffold' %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
+<style type="text/css">
+body {
+  background: #ddd;
+}
+#wrap {
+  width: 760px;
+  margin: 2px auto;
+  background: #999;
+}
+#header {
+  height: 165px;
+  border: 3px solid #999;
+  margin: 2px 2px 20px;
+  padding: 1px;
+  text-indent: -99999px;
+  background: url(http://dl.dropbox.com/u/3819516/mykomiks/home/title.gif) no-repeat;
+}
+#content {
+  border: 3px solid #999;
+  margin: 2px;
+  padding: 0;
+}
+#footer p {
+  font-size: 12px;
+  font-weight: normal;
+  text-align: center;
+  color: #ccc;
+  background: #777;
+  margin: 20px 0 0;
+  padding: 0;
+}
+.img-title {
+  background: #666;
+  color: #ccc;
+  height: 20px;
+  padding: 2px;
+  margin:0;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+#nav {
+  text-align: center;
+}
+#nav span {
+  color: #fff;
+  font-weight: bold;
+  background: #666;
+  padding: 3px 7px;
+  border-top: 3px solid #888;
+  border-left: 3px solid #888;
+  border-right: 3px solid #444;
+  border-bottom: 3px solid #444;
+  cursor: pointer;
+}
+</style>
 </head>
 <body>
+<div id="wrap">
+<a href="/" alt="MYKomiks" title="MYKomiks"><h1 id="header">MYKomiks</h1></a>
 
-<h1>MYKomiks<h1>
-
+<% unless notice.nil? %>
 <p class="notice"><%= notice %></p>
+<% end %>
 
+<div id="content">
 <%= yield %>
+</div>
 
+<div id="nav"><span>&lt; Prev</span> &nbsp; <span>Next &gt;</span></div>
+
+<div id="footer">
+  <p>&copy; Copyright 2010 MYKomiks</p>
+</div>
+</div>
 </body>
 </html>

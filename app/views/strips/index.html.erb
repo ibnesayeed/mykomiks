@@ -1,25 +1,10 @@
-<h1>Listing strips</h1>
+<h2 class="img-title"><%= @strip.title %></h2>
 
-<table border="1">
-  <tr>
-    <th>Title</th>
-    <th>Url</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<center>
+<img src="http://dl.dropbox.com/u/3819516/mykomiks/<%= @strip.url %>.gif" alt="<%= @strip.title %>" />
+</center>
 
-<% @strips.each do |strip| %>
-  <tr>
-    <td><%= strip.title %></td>
-    <td><%= strip.url %></td>
-    <td><%= link_to 'Show', strip %></td>
-    <td><%= link_to 'Edit', edit_strip_path(strip) %></td>
-    <td><%= link_to 'Destroy', strip, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+<p style="display:none">
+  <%= @strip.story %>
+</p>
 
-<br />
-
-<%= link_to 'New strip', new_strip_path %>

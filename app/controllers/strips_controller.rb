@@ -3,6 +3,7 @@ class StripsController < ApplicationController
   # GET /strips.xml
   def index
     @strips = Strip.all
+    @strip = Strip.last
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,6 +14,7 @@ class StripsController < ApplicationController
   # GET /strips/1
   # GET /strips/1.xml
   def show
+    @strips = Strip.all
     @strip = Strip.find(params[:id])
 
     respond_to do |format|
