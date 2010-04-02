@@ -1,4 +1,6 @@
 class StripsController < ApplicationController
+  before_filter :authenticate, :except => [:index, :show]
+
   # GET /strips
   # GET /strips.xml
   def index
@@ -86,6 +88,14 @@ class StripsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(strips_url) }
       format.xml  { head :ok }
+    end
+  end
+
+  private
+
+  def authenticate
+    authenticate_or_request_with_http_basic do |name, password|
+      name == "admin" && password == "kachchha"
     end
   end
 end
