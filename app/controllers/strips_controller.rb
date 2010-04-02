@@ -5,6 +5,9 @@ class StripsController < ApplicationController
     @strips = Strip.all
     @strip = Strip.last
 
+    @prev = @strips[(@strips.index(@strip) - 1)]
+    @next = @strips.first
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @strips }
@@ -16,6 +19,9 @@ class StripsController < ApplicationController
   def show
     @strips = Strip.all
     @strip = Strip.find(params[:id])
+
+    @prev = @strips[(@strips.index(@strip) - 1)]
+    @next = @strips[(@strips.index(@strip) + 1)] || @strips.first
 
     respond_to do |format|
       format.html # show.html.erb

@@ -1,10 +1,1 @@
-<h2 class="img-title"><%= @strip.title %></h2>
-
-<center>
-<img src="http://dl.dropbox.com/u/3426859/mykomiks/<%= @strip.url %>.gif" alt="<%= @strip.title %>" />
-</center>
-
-<p style="display:none">
-  <%= @strip.story %>
-</p>
-
+<%= render :partial => 'strip' %>
