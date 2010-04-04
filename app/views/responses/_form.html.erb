@@ -1,12 +1,13 @@
+<center>
+<br />
 <% form_for(@response) do |f| %>
   <%= f.error_messages %>
-
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, "Name*" %><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email, "Email <i>(*wanna hear from us?)</i>" %><br />
     <%= f.text_field :email %>
   </div>
   <div class="field">
@@ -14,14 +15,15 @@
     <%= f.text_field :phone %>
   </div>
   <div class="field">
-    <%= f.label :subject %><br />
-    <%= f.text_field :subject %>
+    <%= f.label :subject %>
+    <%= f.select :subject, [["Komment", "comment"], ["Suggestion", "suggestion"], ["Issue", "issue"], ["Kopyright", "copyright"], ["Other", "other"]] %>
   </div>
   <div class="field">
-    <%= f.label :comment %><br />
-    <%= f.text_area :comment %>
+    <%= f.text_area :comment, :rows => 10, :cols => 35 %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit" %>
   </div>
 <% end %>
+</center>
+
