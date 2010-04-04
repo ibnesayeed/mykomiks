@@ -1,0 +1,28 @@
+<p>
+  <b>Name:</b>
+  <%= @response.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @response.email %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @response.phone %>
+</p>
+
+<p>
+  <b>Subject:</b>
+  <%= @response.subject %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%= @response.comment %>
+</p>
+
+
+<%= link_to 'Edit', edit_response_path(@response) %> |
+<%= link_to 'Back', responses_path %>
