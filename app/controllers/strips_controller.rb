@@ -4,7 +4,7 @@ class StripsController < ApplicationController
   # GET /strips
   # GET /strips.xml
   def index
-    @strips = Strip.all
+    @strips = Strip.order("id ASC").all
     @strip = Strip.last
 
     @prev = @strips[(@strips.index(@strip) - 1)]
@@ -19,7 +19,7 @@ class StripsController < ApplicationController
   # GET /strips/1
   # GET /strips/1.xml
   def show
-    @strips = Strip.all
+    @strips = Strip.order("id ASC").all
     @strip = Strip.find(params[:id])
 
     @prev = @strips[(@strips.index(@strip) - 1)]
