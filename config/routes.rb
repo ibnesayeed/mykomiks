@@ -3,6 +3,8 @@ Mykomiks::Application.routes.draw do |map|
 
   resources :strips
 
+  match "kontakt" => "responses#new", :as => :kontakt
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
