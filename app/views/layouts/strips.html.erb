@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MYKomiks | Komik Strips</title>
+  <link href="http://dl.dropbox.com/u/3426859/mykomiks/home/style.css" media="screen" rel="stylesheet" type="text/css" />
+  <%= csrf_meta_tag %>
+</head>
+<body>
+<div id="wrap">
+<img id="imgmap" src="http://dl.dropbox.com/u/3426859/mykomiks/" usemap="#imgmap" border="0" width="746" height="213" alt="" />
+<map id="_imgmap" name="imgmap">
+<area shape="rect" coords="0,0,741,162" href="/" alt="MYKomiks" title="MYKomiks" />
+<area shape="rect" coords="0,165,208,208" href="/kharakters.html" alt="Kharakters" title="Kharakters" />
+<area shape="rect" coords="210,165,417,208" href="/kontakt" alt="Kontakt" title="Kontakt" />
+<area shape="rect" coords="421,166,550,208" href="/about.html" alt="About" title="About" />
+<area shape="rect" coords="554,166,598,207" href="http:/www.facebook.com/pages/MYKOMIKS/112849878727118" alt="Facebook" title="Facebook" />
+<area shape="rect" coords="603,167,650,208" href="/feed" alt="RSS" title="RSS" onclick="alert('Feeds will be available soon!'); return false;" />
+<area shape="rect" coords="655,169,695,207" href="http://twitter.com/mykomiks" alt="Twitter" title="Twitter"    />
+<area shape="rect" coords="701,169,741,206" href="/subscribe" alt="Subscribe" title="Subscribe" onclick="alert('Email subscription will be available soon!'); return false;" />
+</map>
+
+<% unless notice.nil? %>
+<p class="notice"><%= notice %></p>
+<% end %>
+
+<%= yield %>
+
+<div id="footer">
+  <p>&copy; Copyright 2010 MYKomiks</p>
+</div>
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-15599723-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
