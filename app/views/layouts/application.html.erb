@@ -7,15 +7,17 @@
 </head>
 <body>
 <div id="wrap">
-<a href="/" alt="MYKomiks" title="MYKomiks"><h1 id="header">MYKomiks</h1></a>
-<div id="topnav">
-<ul>
-<li><a href="/kharakters.html"><img src="http://dl.dropbox.com/u/3426859/mykomiks/home/kharakter.gif" /></a></li>
-<li><a href="/kontakt"><img src="http://dl.dropbox.com/u/3426859/mykomiks/home/kontakt.gif" /></a></li>
-<li><a href="/about.html"><img src="http://dl.dropbox.com/u/3426859/mykomiks/home/about.gif" /></a></li>
-</ul>
-</div>
-<div style="clear:both;"></div>
+<img id="imgmap" src="http://dl.dropbox.com/u/3426859/mykomiks/home/mytitle.gif" usemap="#imgmap" border="0" width="757" height="213" alt="" />
+<map id="_imgmap" name="imgmap">
+<area shape="rect" coords="0,0,757,162" href="/" alt="MYKomiks" title="MYKomiks" />
+<area shape="rect" coords="0,166,215,213" href="/kharakters.html" alt="Kharakters" title="Kharakters" />
+<area shape="rect" coords="217,166,427,213" href="/kontakt" alt="Kontakt" title="Kontakt" />
+<area shape="rect" coords="428,166,560,213" href="/about.html" alt="About" title="About" />
+<area shape="rect" coords="561,166,610,213" href="http:/www.facebook.com/pages/MYKOMIKS/112849878727118" alt="Facebook" title="Facebook" />
+<area shape="rect" coords="611,166,662,213" href="/feed" alt="RSS" title="RSS" onclick="alert('Feeds will be available soon!'); return false;" />
+<area shape="rect" coords="663,166,710,213" href="http://twitter.com/mykomiks" alt="Twitter" title="Twitter"    />
+<area shape="rect" coords="711,166,757,213" href="/subscribe" alt="Subscribe" title="Subscribe" onclick="alert('Email subscription will be available soon!'); return false;" />
+</map>
 
 <% unless notice.nil? %>
 <p class="notice"><%= notice %></p>

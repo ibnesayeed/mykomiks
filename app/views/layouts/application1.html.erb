@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MYKomiks | Komik Strips</title>
+  <link href="http://dl.dropbox.com/u/3426859/mykomiks/home/style.css" media="screen" rel="stylesheet" type="text/css" />
+  <%= csrf_meta_tag %>
+</head>
+<body>
+<div id="wrap">
+<a href="/" alt="MYKomiks" title="MYKomiks"><h1 id="header">MYKomiks</h1></a>
+<div id="topnav">
+<ul>
+<li><a href="/kharakters.html"><img src="http://dl.dropbox.com/u/3426859/mykomiks/home/kharakter.gif" /></a></li>
+<li><a href="/kontakt"><img src="http://dl.dropbox.com/u/3426859/mykomiks/home/kontakt.gif" /></a></li>
+<li><a href="/about.html"><img src="http://dl.dropbox.com/u/3426859/mykomiks/home/about.gif" /></a></li>
+</ul>
+</div>
+<div style="clear:both;"></div>
+
+<% unless notice.nil? %>
+<p class="notice"><%= notice %></p>
+<% end %>
+
+<%= yield %>
+
+<div id="footer">
+  <p>&copy; Copyright 2010 MYKomiks</p>
+</div>
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-15599723-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
