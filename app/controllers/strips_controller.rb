@@ -9,6 +9,17 @@ class StripsController < ApplicationController
 
     @prev = @strips[(@strips.index(@strip) - 1)]
     @next = @strips.first
+    @rand = @strips[rand(@strips.length)]
+    unless @strips[(@strips.index(@next) + 4)].nil?
+      @ff = @strips[(@strips.index(@next) + 4)]
+    else
+      @ff = @strips.last
+    end
+    unless @strips[(@strips.index(@prev) - 4)].nil?
+      @fr = @strips[(@strips.index(@prev) - 4)]
+    else
+      @fr = @strips.first
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,6 +35,17 @@ class StripsController < ApplicationController
 
     @prev = @strips[(@strips.index(@strip) - 1)]
     @next = @strips[(@strips.index(@strip) + 1)] || @strips.first
+    @rand = @strips[rand(@strips.length)]
+    unless @strips[(@strips.index(@next) + 4)].nil?
+      @ff = @strips[(@strips.index(@next) + 4)]
+    else
+      @ff = @strips.last
+    end
+    unless @strips[(@strips.index(@prev) - 4)].nil?
+      @fr = @strips[(@strips.index(@prev) - 4)]
+    else
+      @fr = @strips.first
+    end
 
     respond_to do |format|
       format.html # show.html.erb

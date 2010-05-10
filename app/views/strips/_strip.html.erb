@@ -1,3 +1,14 @@
+<div id="buttons" style="padding-top: 4px; background: #666; text-align: center;">
+<img id="im1" src="http://dl.dropbox.com/u/3426859/mykomiks/home/buttons-gray.gif" usemap="#im1" border="0" width="325" height="44" alt="" />
+<map id="_im1" name="im1">
+<area shape="rect" coords="0,0,58,39" href="/strips/<%= @fr.id %>" alt="Fast Rewind" title="Fast Rewind" />
+<area shape="rect" coords="67,0,125,39" href="/strips/<%= @prev.id %>" alt="Previous" title="Previous" />
+<area shape="rect" coords="133,0,191,39" href="/strips/<%= @rand.id %>" alt="Random" title="Random" />
+<area shape="rect" coords="200,0,258,39" href="/strips/<%= @next.id %>" alt="Next" title="Next" />
+<area shape="rect" coords="267,0,320,39" href="/strips/<%= @ff.id %>" alt="Fast Forward" title="Fast Forward" />
+</map>
+</div>
+
 <div id="content">
 <h2 class="img-title"><%= @strip.title %></h2>
 
