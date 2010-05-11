@@ -5,6 +5,7 @@ class StripsController < ApplicationController
   # GET /strips.xml
   def index
     @strips = Strip.order("id ASC").all
+    @lstrips = @strips.reverse.shift(10)
     @strip = Strip.last
 
     @prev = @strips[(@strips.index(@strip) - 1)]
@@ -24,6 +25,7 @@ class StripsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @strips }
+      format.rss
     end
   end
 

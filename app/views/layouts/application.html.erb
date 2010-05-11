@@ -3,6 +3,7 @@
 <head>
   <title>MYKomiks | Komik Strips</title>
   <link href="http://dl.dropbox.com/u/3426859/mykomiks/home/style.css" media="screen" rel="stylesheet" type="text/css" />
+  <%= auto_discovery_link_tag(:rss, "/strips.rss") %>
   <%= csrf_meta_tag %>
 </head>
 <body>
@@ -14,7 +15,7 @@
 <area shape="rect" coords="217,166,427,213" href="/kontakt" alt="Kontakt" title="Kontakt" />
 <area shape="rect" coords="428,166,560,213" href="/about.html" alt="About" title="About" />
 <area shape="rect" coords="561,166,610,213" href="http://www.facebook.com/pages/MYKOMIKS/112849878727118" alt="Facebook" title="Facebook" />
-<area shape="rect" coords="611,166,662,213" href="/feed" alt="RSS" title="RSS" onclick="alert('Feeds will be available soon!'); return false;" />
+<area shape="rect" coords="611,166,662,213" href="/strips.rss" alt="RSS" title="RSS" />
 <area shape="rect" coords="663,166,710,213" href="http://twitter.com/mykomiks" alt="Twitter" title="Twitter"    />
 <area shape="rect" coords="711,166,757,213" href="/subscribe" alt="Subscribe" title="Subscribe" onclick="alert('Email subscription will be available soon!'); return false;" />
 </map>
