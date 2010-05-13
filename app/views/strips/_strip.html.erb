@@ -16,6 +16,12 @@
 <img src="http://dl.dropbox.com/u/3426859/mykomiks/<%= @strip.url %>.gif" alt="<%= @strip.title %>" />
 </center>
 
+<% unless @strip.note.blank? %>
+<div id="note">
+<%= raw simple_format(@strip.note) %>
+</div>
+<% end %>
+
 <p style="display:none">
   <%= @strip.story %>
 </p>
