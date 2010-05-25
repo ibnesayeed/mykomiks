@@ -1,7 +1,11 @@
 Mykomiks::Application.routes.draw do |map|
   resources :responses
 
-  resources :strips
+  resources :strips do
+    resources :comments
+  end
+
+  resources :comments
 
   match "kontakt" => "responses#new", :as => :kontakt
 

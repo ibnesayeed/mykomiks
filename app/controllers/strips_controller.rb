@@ -114,12 +114,4 @@ class StripsController < ApplicationController
       format.xml  { head :ok }
     end
   end
-
-  private
-
-  def authenticate
-    authenticate_or_request_with_http_basic do |name, password|
-      name == "admin" && password == "kachchha"
-    end
-  end
 end

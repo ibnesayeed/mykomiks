@@ -9,25 +9,37 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100513034327) do
+ActiveRecord::Schema.define(:version => 20100525033417) do
 
-  create_table "responses", :force => true do |t|
-    t.string   "name"
+  create_table "comments", :force => true do |t|
+    t.integer  "strip_id"
+    t.string   "author"
     t.string   "email"
-    t.string   "phone"
-    t.string   "subject"
-    t.text     "comment"
+    t.string   "website"
+    t.text     "body"
+    t.string   "status",     :default => "unverified"
+    t.boolean  "approved",   :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  create_table "responses", :force => true do |t|
+    t.string    "name"
+    t.string    "email"
+    t.string    "phone"
+    t.string    "subject"
+    t.text      "comment"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+  end
+
   create_table "strips", :force => true do |t|
-    t.string   "title"
-    t.string   "url"
-    t.text     "story"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "note"
+    t.string    "title"
+    t.string    "url"
+    t.text      "story"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.text      "note"
   end
 
 end

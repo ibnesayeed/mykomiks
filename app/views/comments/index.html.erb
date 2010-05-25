@@ -1,0 +1,33 @@
+<h1>Listing comments</h1>
+
+<table>
+  <tr>
+    <th>Strip</th>
+    <th>Author</th>
+    <th>Email</th>
+    <th>Website</th>
+    <th>Body</th>
+    <th>Approved</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @comments.each do |comment| %>
+  <tr>
+    <td><%= comment.strip_id %></td>
+    <td><%= comment.author %></td>
+    <td><%= comment.email %></td>
+    <td><%= comment.website %></td>
+    <td><%= comment.body %></td>
+    <td><%= comment.approved %></td>
+    <td><%= link_to 'Show', comment %></td>
+    <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
+    <td><%= link_to 'Destroy', comment, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New comment', new_comment_path %>

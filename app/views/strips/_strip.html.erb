@@ -25,7 +25,41 @@
 <p style="display:none">
   <%= @strip.story %>
 </p>
+
 </div>
 
 <div id="nav"><%= link_to raw('<span>&lt; Prev</span>'), @prev %> &nbsp; <%= link_to raw('<span>Next &gt;</span>'), @next %></div>
 
+<div id="comment_section" style="padding:0 10px;border:1px solid #666; background: #ddd;">
+<h3>Comments</h3>
+<div id="comments">
+<%= render :partial => @strip.comments %>
+</div>
+
+<div id="comment_form">
+<% form_for [@strip, @strip.comments.build] do |f| %>
+  <%= f.error_messages %>
+
+  <div class="field">
+    <%= f.label :author %>* :
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :email %>* :
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :website %> :
+    <%= f.text_field :website %>
+  </div>
+  <div class="field">
+    <%= f.label :body, "Your thoughts* :" %><br />
+    <%= f.text_area :body %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Post Comment" %>
+  </div>
+  <br />
+<% end %>
+</div>
+</div>
