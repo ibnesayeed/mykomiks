@@ -17,6 +17,14 @@
     <%= f.label :note %><br />
     <%= f.text_area :note, :rows => 6 %>
   </div>
+  <h3>Categories:</h3>
+  <% for category in Category.all %>
+  <div>
+    <%= check_box_tag "strip[category_ids][]", category.id, @strip.categories.include?(category) %>
+    <%= category.title %>
+  </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>

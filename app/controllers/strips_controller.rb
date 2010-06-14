@@ -90,6 +90,7 @@ class StripsController < ApplicationController
   # PUT /strips/1
   # PUT /strips/1.xml
   def update
+    params[:strip][:category_ids] ||= []
     @strip = Strip.find(params[:id])
 
     respond_to do |format|
