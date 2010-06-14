@@ -1,4 +1,6 @@
 Mykomiks::Application.routes.draw do |map|
+  resources :categories
+
   resources :responses
 
   resources :strips do
