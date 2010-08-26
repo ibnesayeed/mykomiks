@@ -1,5 +1,6 @@
 class StripsController < ApplicationController
   before_filter :authenticate, :except => [:index, :show]
+  before_filter :normalize, :only => [:update]
 
   # GET /strips
   # GET /strips.xml
@@ -90,7 +91,6 @@ class StripsController < ApplicationController
   # PUT /strips/1
   # PUT /strips/1.xml
   def update
-    params[:strip][:category_ids] ||= []
     @strip = Strip.find(params[:id])
 
     respond_to do |format|
@@ -114,5 +114,11 @@ class StripsController < ApplicationController
       format.html { redirect_to(strips_url) }
       format.xml  { head :ok }
     end
+  end
+
+  private
+  
+  def normalize
+    params[:strip][:category_ids] = [1,3]
   end
 end

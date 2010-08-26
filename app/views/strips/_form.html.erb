@@ -20,7 +20,7 @@
   <h3>Categories:</h3>
   <% for category in Category.all %>
   <div>
-    <%= check_box_tag "strip[category_ids][]", category.id, @strip.categories.include?(category) %>
+    <%= check_box_tag "strip[category_ids][]", category.id, @strip.categories.include?(category), :id => nil %>
     <%= category.title %>
   </div>
   <% end %>
