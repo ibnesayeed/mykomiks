@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= @strip.nil? ? "" : @strip.title %> | MYKomiks</title>
+  <title><%= @strip.nil? ? "Welcome" : @strip.title %> | MYKomiks</title>
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
   <link href="http://dl.dropbox.com/u/3426859/mykomiks/home/style.css" media="screen" rel="stylesheet" type="text/css" />
+  <meta name="description" content="This comic (komik) series created by Manish Wadhwa (aka M or Dr.M) is the komik with a 'K'. The komik of Me, You and the big 'K' of life. Now what's the big 'K', that's a mystery." />
+  <meta name="keywords" content="cartoon,komik,mykomik,comic,mycomic,comic strip,funny comic,humor comic,phd comic,joke comic,teacher comic,philosophy comic,education comic,tech comic,funny jokes comic,social comic stip,concept comics,professors comic" />
+  <meta name="author" content="Sawood Alam : ibnesayeed" />
   <%= auto_discovery_link_tag(:rss, "/strips.rss") %>
   <%= csrf_meta_tag %>
 </head>
