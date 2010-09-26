@@ -39,7 +39,7 @@ class StripsController < ApplicationController
     @site_desc = @strip.story.gsub(/\n/, '').gsub(/\r/, '')
 
     @prev = @strips[(@strips.index(@strip) - 1)]
-    @next = @strips[(@strips.index(@strip) + 1)] || @strips.first
+    @next = @strips[(@strips.index(@strip) + 1)] || @strips.last
     @rand = @strips[rand(@strips.length)]
     unless @strips[(@strips.index(@next) + 4)].nil?
       @ff = @strips[(@strips.index(@next) + 4)]
