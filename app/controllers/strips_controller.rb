@@ -11,7 +11,7 @@ class StripsController < ApplicationController
     @strip = Strip.last
 
     @prev = @strips[(@strips.index(@strip) - 1)]
-    @next = @strips.first
+    @next = @strips.last
     @rand = @strips[rand(@strips.length)]
     unless @strips[(@strips.index(@next) + 4)].nil?
       @ff = @strips[(@strips.index(@next) + 4)]
