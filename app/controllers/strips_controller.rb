@@ -36,7 +36,7 @@ class StripsController < ApplicationController
   def show
     @strips = Strip.order("id ASC").all
     @strip = Strip.find(params[:id])
-    @site_desc = truncate(@strip.story.gsub("\n", ''), :length => 250, :separator => ' ', :omission => '')
+    @site_desc = @strip.story.gsub("\n", '')
 
     @prev = @strips[(@strips.index(@strip) - 1)]
     @next = @strips[(@strips.index(@strip) + 1)] || @strips.first
