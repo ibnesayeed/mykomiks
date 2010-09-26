@@ -5,6 +5,7 @@ class StripsController < ApplicationController
   # GET /strips
   # GET /strips.xml
   def index
+    @site_desc = "This comic (komik) series created by Manish Wadhwa (aka M or Dr.M) is the komik with a 'K'. The komik of Me, You and the big 'K' of life. Now what's the big 'K', that's a mystery."
     @strips = Strip.order("id ASC").all
     @lstrips = @strips.reverse.shift(10)
     @strip = Strip.last
