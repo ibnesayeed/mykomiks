@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.xml
   def index
-    @comments = Comment.all
+    @comments = Comment.order("id DESC")
 
     respond_to do |format|
       format.html # index.html.erb
