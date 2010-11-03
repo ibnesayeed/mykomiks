@@ -43,7 +43,7 @@ class CommentsController < ApplicationController
   # POST /comments.xml
   def create
     @strip = Strip.find(params[:strip_id])
-    unless ["91.212.226.3"].index(request.remote_ip)
+    unless ["91.212.226.3", "111.160.70.139", "94.56.0.211", "195.134.102.37", "74.7.131.97"].index(request.remote_ip)
       @comment = @strip.comments.create(params[:comment])
     end
     redirect_to strip_path(@strip) 
