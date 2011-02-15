@@ -44,7 +44,7 @@ class CommentsController < ApplicationController
   def create
     @strip = Strip.find(params[:strip_id])
     unless ["195.55.130.44", "196.38.43.185", "208.73.177.89", "168.216.38.209", "82.127.120.116", "72.3.253.204", "143.167.8.123", "173.61.110.35", "12.168.203.132", "208.73.177.89", "91.212.226.3", "111.160.70.139", "111.160.68.12", "94.56.0.211", "195.134.102.37", "74.7.131.97"].index(request.remote_ip)
-      @comment = @strip.comments.create(params[:comment])
+      #@comment = @strip.comments.create(params[:comment])
     end
     redirect_to strip_path(@strip) 
 
